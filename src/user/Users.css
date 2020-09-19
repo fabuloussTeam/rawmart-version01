@@ -1,0 +1,30 @@
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+   
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container.users{
+          width: 1024px;
+          border: 1px solid grey;
+          height: 700px;
+          padding-left: 1%;
+      }
+
+      .container > .container-one {
+
+      }  
+
+    .container > .container-one, .container-two {
+        width: 49%;
+        border: 1px solid red;
+        float: left;
+        margin: 0 auto !important;
+    }  
+  }
