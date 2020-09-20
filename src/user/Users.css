@@ -6,25 +6,122 @@
   }
   
   @media only screen and (min-width: 600px) {
-   
+    
+    
+
   }
+
+
   
   @media only screen and (min-width: 768px) {
     .container.users{
           width: 1024px;
-          border: 1px solid grey;
-          height: 700px;
-          padding-left: 1%;
+         /* border: 1px solid grey; */
+         
+          /*padding-left: 1%;*/
       }
-
-      .container > .container-one {
-
-      }  
 
     .container > .container-one, .container-two {
         width: 49%;
-        border: 1px solid red;
         float: left;
-        margin: 0 auto !important;
+       /* margin: 0 auto !important;*/
     }  
+
+    .sliderimg{
+        width: 100%;
+        height: 700px;
+        object-fit: cover
+    }
+
+      .alice-carousel__prev-btn, .alice-carousel__next-btn {
+          display: none;
+      }
+
+      .alice-carousel__dots{
+          position: absolute;
+      }
+
+      .alice-carousel__dots{
+        bottom: 50%;
+        left: 42%;
+      }
+
+     .under-slider{
+          width: 43.5% !important;
+          height: 700px;
+          background-color: rgba(13, 53, 175, 0.5);
+          z-index: 1000;
+          top: 10px;
+          position: absolute;
+      }
+
+    
+      .under-slider{
+          width: 100%;
+      }
+
+      .under-slider .under-slider-container {
+          color: white;
+          font-size: 1.5em;
+          width: 60%;
+          margin: 0 auto;
+      }
+
+      .under-slider-container .title{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 11%;
+        margin-bottom: 55%;
+       }
+    
+        .description .description-detail {
+            list-style-type: none;
+        }
+
+        .description-detail > .description-detail-item {
+            font-size: 1.2em;
+            word-spacing: 0.2em;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5%;
+        }
+        .description-detail-item:nth-child(4) {
+            border: 1px solid greenyellow;
+            width: 100%;
+            margin-top: 5%;
+            text-align: center;
+            background-color: rgb(142, 230, 10);
+            font-size: 0.5em;
+            padding-top: 4%;
+            padding-bottom: 4%;
+           
+        }
+
+        .description-detail-item:nth-child(5) {
+            border: 1px solid blueviolet;
+            width: 100%;
+            margin-top: 2%;
+            text-align: center;
+            background-color: rgb(10, 179, 230);
+            font-size: 0.5em;
+            padding-top: 4%;
+            padding-bottom: 4%;
+        }
+
+        .description-detail-item a {
+            color: white;
+            font-weight: 400em;
+            text-decoration: none;
+        }
+
+ 
+        /*** seller and buyer css ***/
+
+        .general-container-seller-and-buyer {
+            width: 500px;
+            height: 400px;
+          /*  border: 1px solid red; */
+            margin: 0 auto;
+        }
+
+
+
   }

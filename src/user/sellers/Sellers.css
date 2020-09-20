@@ -1,0 +1,99 @@
+.container-seller {
+    margin: 0 auto;
+    padding-top: 25% !important;
+}
+
+.nav-bar-seller {
+ text-align: right;
+ padding-right: 3%;
+}
+
+.nav-bar-seller nav ul {
+    list-style: none;
+    padding-right: 13%;
+}
+
+.nav-bar-seller nav ul > .nav-item {
+    display: inline-block;
+    margin-right: 4%;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: underline; 
+}
+
+.nav-bar-seller nav ul > .nav-item a {
+  color: gray;
+}
+
+.detail-login-seller{
+    list-style: none;
+}
+
+.detail-login-seller-item:first-child .img-profile  {
+ border-radius: 40px;
+ width: 23%;
+}
+
+.detail-login-seller .detail-login-seller-item:first-child img{
+  width: 100%;
+  border-radius: 42px;
+}
+
+.detail-login-seller-item.title-first{
+ margin-top: 6%;
+ font-size: 1.1em;
+ text-transform: uppercase;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.detail-login-seller-item.title-last{
+    margin-top: 1%;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.detail-login-seller-item.title-description{
+    margin-top: 6%;
+    margin-bottom: 10%;
+    font-size: 0.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: gray;
+   }
+
+   .detail-login-seller-item form .form-field-item {
+       margin-top: 8px;
+       width: 80%;
+   }
+   
+   .detail-login-seller-item form .forgot-password {
+        margin-left: 8px;
+        margin-right: 90px;
+        vertical-align: baseline;
+    }
+
+    .detail-login-seller-item form .forgot-password {
+        vertical-align: baseline;
+    }
+
+    .detail-login-seller-item form .forgot-password a {
+        vertical-align: baseline;
+     }
+
+    .detail-login-seller-item form .forgot-password .remember-me {
+        float: right;
+        vertical-align: baseline;
+     }
+
+    
+     .submit-button{
+        clear: both;
+        float: right;
+        margin-right: 25px;
+     }
+
+  
+
+
+

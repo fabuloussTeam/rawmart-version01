@@ -8,7 +8,7 @@ const signupCallBack = () => console.log("Vous avez cliqeuz su le bouton de Sign
 
 
 
-export const SignInSignUpNavigation = props => {
+export const SignInSignUpNavigationSeller = props => {
 
 const [click, setClick] = useState(false);
 
@@ -16,10 +16,10 @@ const [click, setClick] = useState(false);
         <nav>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className="nav-item">
-                    <Link to="/login-seller" className="nav-links" onClick={loginCallBack}>Login</Link>
+                    <a href="">Login</a>
                 </li>
                 <li className="nav-item">
-                   <Link to="/signup-seller" className="nav-links" onClick={signupCallBack}>Sign up</Link>
+                <a href="">Sign up</a> 
                 </li>
             </ul>
         </nav>
