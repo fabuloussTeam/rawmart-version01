@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import './Users.css';
@@ -7,10 +7,19 @@ import image2 from '../images/img2.jpg';
 import image3 from '../images/img3.jpg';
 import { Row } from 'react-bootstrap';
 import Sellers from './sellers/Sellers';
-const goBuyer = () => console.log("go to buyer");
-const goSeller = () => console.log("go to Seller");
+import Buyer from './buyer/Buyer';
+
+
+
 
 const Users = () => {
+
+  const goBuyer = () => setSeller(!seller);
+  const goSeller = () => setSeller(!seller);
+
+  const [seller, setSeller] = useState(false);
+
+
   return (
     <div className="container users" style={{ width: "90%", margin: "0 auto" }}>
       <div className="container-one slider seller-and-buyer-button">
@@ -38,13 +47,14 @@ const Users = () => {
               </ul>
             </div>
           </div>
-            
         </div>
     
       </div>
       <div className="container-two login-and-signup-form">
         <div className="general-container-seller-and-buyer">
-           <Sellers />
+
+        { 0 ? <Sellers /> :  <Buyer /> }
+         
         </div>
       </div>
     </div>
