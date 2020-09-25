@@ -1,0 +1,11 @@
+.nav-menu.active-first li:first-child a {
+   color: blue !important;
+}
+
+.nav-menu.active-last li:last-child a {
+    color: blue !important;
+ }
+
+/*.nav-menu > li:last-child a {
+    color: blue;
+ }*/

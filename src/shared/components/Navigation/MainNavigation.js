@@ -1,30 +1,87 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
-const loginCallBack = () => console.log("Vous avez cliqeuz su le bouton de login");
-const signupCallBack = () => console.log("Vous avez cliqeuz su le bouton de Sign up");
+import React, { Component } from 'react';
+import './MainNavigation.css';
 
 
 
+//const signupCallBack = () => console.log("Vous avez cliqeuz su le bouton de Sign up");
 
-export const SignInSignUpNavigationSeller = props => {
+export class SignInSignUpNavigationBuyer extends Component {
 
-const [click, setClick] = useState(false);
+    state = { isLoginBuyer: true }
 
-    return(
-        <nav>
-            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                <li className="nav-item">
-                    <a href="">Login</a>
-                </li>
-                <li className="nav-item">
-                <a href="">Sign up</a> 
-                </li>
-            </ul>
-        </nav>
-    )
+    isloginbuyerscallback = (e) => {
+        e.preventDefault(); // Let's stop this event.
+       this.props.isloginbuyerscb();
+      // alert("Is it stopped?");
+       this.setState({
+        isLoginBuyer: true
+       });
+    }
+
+    issignubuyerscallback = (e) => {
+        e.preventDefault(); // Let's stop this event.
+       this.props.issignupbuyerscb();
+
+       this.setState({
+        isLoginBuyer: false
+       });
+    }
+   
+
+    render() { 
+        return ( 
+            <nav>
+                <ul className={this.state.isLoginBuyer ? "nav-menu active-first" : "nav-menu active-last"}>
+                    <li className="nav-item">
+                      <a href="" onClick={this.isloginbuyerscallback}>Login</a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="" onClick={this.issignubuyerscallback}>Sign up</a> 
+                    </li>
+                </ul>
+            </nav>    
+         );
+    }
 }
+ 
+export class SignInSignUpNavigationSeller extends Component {
+
+    state = { isLoginSeller: true }
+
+    isLoginSeller = (e) => {
+        e.preventDefault();
+        this.props.isloginsellerscb();
+        this.setState({
+            isLoginSeller: true
+        });
+    }
+
+   isSignUpSeller = (e) => {
+        e.preventDefault();
+        this.props.issignupsellerscb();
+        this.setState({
+            isLoginSeller: false
+        });
+    }
+
+    render() { 
+        return ( 
+            <nav>
+                <ul className={this.state.isLoginSeller ? "nav-menu active-first" : "nav-menu active-last"}>
+                    <li className="nav-item">
+                        <a href="" onClick={this.isLoginSeller}>Login</a>
+                    </li>
+                    <li className="nav-item">
+                    <a href="" onClick={this.isSignUpSeller}>Sign up</a> 
+                    </li>
+                </ul>
+            </nav>
+         );
+    }
+}
+ 
+
+
 
 
 export const MainNavigation = props => {

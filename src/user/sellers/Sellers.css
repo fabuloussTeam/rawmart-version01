@@ -1,6 +1,7 @@
 .container-seller {
     margin: 0 auto;
     padding-top: 25% !important;
+    width: 100%;
 }
 
 .nav-bar-seller {
@@ -64,7 +65,7 @@
 
    .detail-login-seller-item form .form-field-item {
        margin-top: 8px;
-       width: 80%;
+       width: auto;
    }
    
    .detail-login-seller-item form .forgot-password {

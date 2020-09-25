@@ -1,26 +1,41 @@
-import React, {Component} from 'react';
-import {SignInSignUpNavigationSeller} from '../../shared/components/Navigation/MainNavigation';
+import React, { Component } from 'react';
+import { SignInSignUpNavigationBuyer } from '../../shared/components/Navigation/MainNavigation';
 import { Row } from 'react-bootstrap';
 import imgsellerprofile from '../../images/seller-images/login-profile-seller.jpg';
 import Button from '@material-ui/core/Button';
 import { TextField, Checkbox, FormControlLabel, Icon } from '@material-ui/core';
 import './Buyer.css';
 
-const forgotpasswordCallback = () => {console.log("Forgot paswword");}
-
 class Buyer extends Component {
 
+   
     state = { 
-        login: false
+        isLoginBuyer: true
      }
+
+        islogincallback = () => {
+            this.setState({
+                isLoginBuyer: true
+            });
+        }
+
+        signupbuyerscb = () => {
+            this.setState({
+                isLoginBuyer: false
+            });
+        }
+
+
+ 
 
     render() { 
         return ( 
-           this.state.login ?      
+        <div>
+            <Row className="nav-bar-seller">
+            <SignInSignUpNavigationBuyer  issignupbuyerscb={this.signupbuyerscb}  isloginbuyerscb={this.islogincallback}  />
+            </Row>
+          { this.state.isLoginBuyer ?      
             <div className="container-seller">
-                <Row className="nav-bar-seller">
-                <SignInSignUpNavigationSeller  />
-                </Row>
                 <ul className="detail-login-seller">
                 <li className="detail-login-seller-item"><div className="img-profile"><img src={imgsellerprofile} /></div></li>
                 <li className="detail-login-seller-item title-first">Wellcome back</li>
@@ -30,7 +45,7 @@ class Buyer extends Component {
                     <form className="" noValidate autoComplete="off">
                     <TextField className="form-field-item" id="outlined-basic" label="Username" label="Username" variant="outlined" required  /> <br/>
                     <TextField className="form-field-item" id="outlined-basic" label="Password" type="password" variant="outlined" required /><br/>
-                    <Row className="forgot-password"><a href="" onClick={forgotpasswordCallback}>Forgot password</a> 
+                    <Row className="forgot-password"><a href="">Forgot password</a> 
                     <FormControlLabel control={<Checkbox name="checkedC" />} label="Remember me" className="remember-me" />
                     <span className = "clear_b"></span>
                     </Row>
@@ -41,9 +56,6 @@ class Buyer extends Component {
                 </ul>
             </div>
              :  <div>
-              <Row className="nav-bar-seller">
-                <SignInSignUpNavigationSeller  />
-                </Row>
                 <ul className="detail-login-seller">
                 <li className="detail-login-seller-item"><div className="img-profile"><img src={imgsellerprofile} /></div></li>
                 <li className="detail-login-seller-item title-first">WHello</li>
@@ -66,7 +78,8 @@ class Buyer extends Component {
                 </li>
 
                 </ul>
-           </div> 
+           </div>}
+        </div> 
          );
     }
 }
