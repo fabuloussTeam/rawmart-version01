@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Users from './user/Users';
 import Admin from './admin/Admin';
-import Buyer from '../src/user/buyer/Buyer'
-import { MainNavigation, SignInSignUpNavigation } from './shared/components/Navigation/MainNavigation';
+import Dashboard from './user/dashboard/Dashboard';
 import './App.css';
+import Shop from './user/shop/Shop';
 
 
 function App() {
@@ -13,17 +13,17 @@ function App() {
 
   return (
     <Router> 
-     { authentificate ? <MainNavigation /> : null }
+   
      <main>
       <Switch>
       <Route path="/" exact>
          <Users />
       </Route> 
-      <Route path="/buyer" exact>
-       <Buyer />
+      <Route path="/dashboard" exact>
+       <Dashboard />
       </Route> 
-      <Route path="/admin" exact>
-        <Admin />
+      <Route path="/shop" exact>
+        <Shop />
       </Route> 
       <Redirect to="/" />
       </Switch>

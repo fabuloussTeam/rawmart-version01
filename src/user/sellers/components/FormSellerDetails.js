@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { TextField, Checkbox, FormControlLabel, Icon } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
-
 class FormSellerDetails extends Component {
    
-    state = {  }
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
