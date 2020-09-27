@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Users from './user/Users';
 import Admin from './admin/Admin';
-import Dashboard from './user/dashboard/Dashboard';
+import { Dashboard } from './user/dashboard/Dashboard';
 import './App.css';
 import Shop from './user/shop/Shop';
 
