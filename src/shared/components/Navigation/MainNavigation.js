@@ -10,6 +10,36 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
+import MenuList from '@material-ui/core/MenuList';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import imgsellerprofile from '../../../images/seller-images/login-profile-seller.jpg';
+
+
+// General style
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      padding: '2px 4px',
+      display: 'flex',
+      alignItems: 'center',
+      width: 400,
+    },
+    input: {
+      marginLeft: theme.spacing(1),
+      flex: 1,
+    },
+    iconButton: {
+      padding: 10,
+    },
+    divider: {
+      height: 28,
+      margin: 4,
+    },
+    
+  
+
+  }));
+
 
 
 //const signupCallBack = () => console.log("Vous avez cliqeuz su le bouton de Sign up");
@@ -91,165 +121,154 @@ export class SignInSignUpNavigationSeller extends Component {
  
 
 export const TopBarNav = props => {
+
+    /** Select currency */
+    const classes = useStyles();
+    const [currency, setCurrency] = React.useState('EUR');
+    const [open, setOpen] = React.useState(false);
+
+    const handleChangeCurrency = (event) => {
+        setCurrency(event.target.value);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+
     return (
-        <nav>
-            <ul className="top-bar nav">
-                <li className="top-bar-item">
-                  <a href="">EUR</a>
-                </li>
-                <li className="top-bar-item">
-                  <a href="">My Account</a>
-                </li>
-                <li className="top-bar-item">
-                  <a href="">Privacy Policy</a>
-                </li>
-                <li className="top-bar-item">
-                  <a href="">Contact Support</a>
-                </li>
-                <li className="top-bar-item">
-                  <a href="">Logout</a>
-                </li>
-            </ul>
-        </nav>    
+        <div className="topbarnav-container">
+            <MenuList className="top-bar nav" md={6}>
+                <MenuItem className="top-bar-item" onClick={handleClose}>
+                <FormControl>
+                    <NativeSelect
+                    defaultValue={currency}
+                    onChange={handleChangeCurrency}
+                    inputProps={{
+                        name: 'name',
+                        id: 'uncontrolled-native',
+                    }}
+                    className="currencyList"
+                    value={currency}
+                    >
+                    <option value={'eur'}>EUR</option>
+                    <option value={'gbp'}>GBP</option>
+                    <option value={'usd'}>USD</option>
+                    </NativeSelect>
+                </FormControl>
+                </MenuItem>
+                <MenuItem className="top-bar-item" onClick={handleClose}>My Account</MenuItem>
+                <MenuItem className="top-bar-item" onClick={handleClose}>Privacy Policy</MenuItem>
+                <MenuItem className="top-bar-item" onClick={handleClose}>Contact Support</MenuItem>
+                <MenuItem className="top-bar-item" onClick={handleClose}>Logout</MenuItem>
+            </MenuList>
+        </div>
     );
 };
 
 
-class ProfileNav extends Component {
-    constructor(props) {
-        super(props);
+export const ProfileNav = () => {
 
-        this.state = {
-            title: '',
-            checkedA: true,
-            checkedB: true,
-            age: '',
-            open: false
+    const classes = useStyles();
+    const [title, setTitle] = React.useState('Rawmart');
+    const [cardAction, setCardAction] = React.useState('my-card');
+    const [open, setOpen] = React.useState(false);
+    const [state, setState] = React.useState({
+        checkedA: true,
+        checkedB: true,
+    });
+    
+      const handleChange = (event) => {
+        setState({ ...state, [event.target.name]: event.target.checked });
+      };
 
-          }
-    }
-
-    handleChange = (event) => {
-        this.setState({ ...this.state, [event.target.name]: event.target.checked });
+    const handleChangeAction = (event) => {
+        setCardAction(event.target.value);
     };
 
-    
- handleChangeAge = (event) => {
-    this.setState({ age: event.target.value });
-  };
+    const handleClose = () => {
+        setOpen(false);
+    };
 
-   handleClose = () => {
-    this.setState({
-        open: false
-    })
-  };
+    const handleOpen = () => {
+        setOpen(true);
+    };
 
-  handleOpen = () => {
-    this.setState(
-        {
-            open: true,
-        }
-    )
-  };
-     
 
-    render() { 
         return ( 
             <div className="profile-container">
-            <span className="profile-nav-left">{((this.state.title != null) && (this.state.title !== "")) ? <h1 className="profile-nav-title">Rawmart</h1> : <a href=""><img src="" alt="IMG LOGO HERE" /></a>  }</span>
-            <div className="profile-nav-right">
-               <ul>
-                   <li>
-                   <Switch
-                       checked={this.state.checkedB}
-                       onChange={this.handleChange}
-                       color="primary"
-                       name="checkedB"
-                       inputProps={{ 'aria-label': 'primary checkbox' }}
-                   />
+              <div className="profile-nav-left">{((title != null) && (title !== "")) ? <h1 className="profile-nav-title">Rawmart</h1> : <a href=""><img src="" alt="IMG LOGO HERE" /></a>  }</div>
+              <div className="profile-nav-right">
+               <ul className="profile-nav-right-container">
+                   <li className="profile-nav-right-container-item">
+                    <Switch
+                        checked={state.checkedB}
+                        onChange={handleChange}
+                        color="default"
+                        name="checkedB"
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                    <span className="">Switch to buyer mode</span>
                    </li>
-                   <li>
+                   <li className="profile-nav-right-container-item">
                        <ul>
-                           <li><img className="profile-img" src="" alt="PROFILE IMG" /></li>
+                           <li><img className="profile-img" src={imgsellerprofile} alt="PROFILE IMG" /></li>
                            <li>
-                           <FormControl className="">
-                               <InputLabel id="demo-controlled-open-select-label">Age</InputLabel>
-                               <Select
-                               labelId="demo-controlled-open-select-label"
-                               id="demo-controlled-open-select"
-                               open={this.state.open}
-                               onClose={this.handleClose}
-                               onOpen={this.handleOpen}
-                               value={this.state.age}
-                               onChange={this.handleChangeAge}
-                               >
-                               <MenuItem value="">
-                                   <em>None</em>
-                               </MenuItem>
-                               <MenuItem value={10}>Ten</MenuItem>
-                               <MenuItem value={20}>Twenty</MenuItem>
-                               <MenuItem value={30}>Thirty</MenuItem>
-                               </Select>
-                           </FormControl>
+                            <FormControl className={classes.formControl}>
+                                <Select
+                                    labelId="profile-controlled-open-select-label"
+                                    id="profile-controlled-open-select"
+                                    open={open}
+                                    onClose={handleClose}
+                                    onOpen={handleOpen}
+                                    value={cardAction}
+                                    onChange={handleChangeAction}
+                                    defaultValue={(cardAction == "my-card") ? "00.0": cardAction}
+                                >
+                                <MenuItem value="my-card">My Card</MenuItem>
+                                <MenuItem value="my-seller">My Seller</MenuItem>
+                                <MenuItem value="withdrawal">Withdrawal</MenuItem>
+                                </Select>
+                            </FormControl>
                            </li>
                        </ul>
                    </li>
                </ul>
             </div>
-         </div>
+           </div>
          );
-    }
 }
  
-export default ProfileNav;
 
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      padding: '2px 4px',
-      display: 'flex',
-      alignItems: 'center',
-      width: 400,
-    },
-    input: {
-      marginLeft: theme.spacing(1),
-      flex: 1,
-    },
-    iconButton: {
-      padding: 10,
-    },
-    divider: {
-      height: 28,
-      margin: 4,
-    },
-  }));
 
 export const MainNav = props => {
     const classes = useStyles();
 
+    const [open, setOpen] = React.useState(false);
+
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
     return (
-    <nav>
-        <ul className="main-nav-container">
-            <li className="main-nav-item">
-              <a href="">Dashboard</a>
-            </li>
-            <li className="main-nav-item">
-              <a href="">Order</a>
-            </li>
-            <li className="main-nav-item">
-              <a href="">Earnings</a>
-            </li>
-            <li className="main-nav-item">
-              <a href="">Notifications</a>
-            </li>
-            <li className="main-nav-item">
-              <a href="">My Products</a>
-            </li>
-            <li className="main-nav-item">
-              <a href="">Profile</a>
-            </li>
-            <li className="main-nav-search-bar">
-            <Paper component="form" className={classes.root}>
+        <MenuList className="main-nav-container" md={6}>
+          <MenuItem className="main-nav-item" onClick={handleClose}>Dashboard</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>Order</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>Earnings</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>Notifications</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>My Products</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>Profile</MenuItem>
+          <MenuItem className="main-nav-item" onClick={handleClose}>
+          <Paper component="form" className={classes.root} id="search-bar">
                 <InputBase
                     className={classes.input}
                     placeholder="Search product or Client"
@@ -259,9 +278,8 @@ export const MainNav = props => {
                     <SearchIcon />
                 </IconButton>
             </Paper>
-            </li>
-        </ul>
-    </nav>    
+          </MenuItem>
+        </MenuList>
     );
 };
  

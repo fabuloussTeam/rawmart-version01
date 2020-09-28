@@ -6,6 +6,135 @@
     color: blue !important;
  }
 
-/*.nav-menu > li:last-child a {
-    color: blue;
- }*/
+.topbarnav-container {
+   background-color: #004d4d;
+   text-align: right;
+   padding-left: 8%;
+   padding-right: 8%;
+}
+ 
+ .top-bar.nav  .top-bar-item {
+    width: 110px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: right;
+    font-size: 0.9em;
+    padding-right: 2%;
+ }
+
+ .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl {
+   color: #ffffff !important;
+   font-size: 0.9em;
+}
+
+svg.MuiSvgIcon-root.MuiNativeSelect-icon {
+   color: #ffffff;
+
+}
+
+.currencyList option {
+   color: #000000 !important;
+   margin: 10px !important;
+   font-size: 0.9em;
+   margin-top: 10px;
+}
+
+.MuiInput-underline:before {
+   border-bottom: inherit !important;
+}
+
+/*** Profile Navigation **/
+
+.profile-container {
+   background-color: #0000ff;
+   padding-left: 8%;
+   padding-right: 8%;
+}
+
+.profile-container .profile-nav-right{
+ /*  border: 1px solid red;*/
+   width: 75%;
+}
+.profile-container .profile-nav-left{
+ /*  border: 1px solid green;*/
+   width: 25%;
+   text-align: left;
+   padding-left: 10px;
+}
+
+.profile-container .profile-nav-right, .profile-container .profile-nav-left {
+   display: inline-block;
+   vertical-align: bottom;
+}
+
+.profile-container .profile-nav-right ul{
+   list-style-type: none;
+ /*  border: 1px solid yellow; */
+ text-align: right;
+}
+
+.profile-nav-right-container .profile-nav-right-container-item {
+   display: inline-block;
+   width: 250px;
+ /*  border: 1px solid green;*/
+   vertical-align: bottom;
+}
+
+
+.profile-nav-right-container .profile-nav-right-container-item:first-child {
+   color: #ffffff;
+}
+
+
+.profile-nav-right-container .profile-nav-right-container-item:last-child ul {
+   text-align: right;
+   /*margin-right: 5px;*/
+}
+
+.profile-nav-right-container .profile-nav-right-container-item:last-child li{
+  display: inline-block;
+/*  border: 1px solid yellow;*/
+  vertical-align: bottom;
+   padding-right: 5%;
+}
+
+.profile-img{
+   width: 50px;
+   height: 50px;
+   border-radius: 40px;
+}
+
+.profile-nav-title {
+   color: #ffffff;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/** Main navigation **/
+
+.main-nav-container{
+   background-color: #000000;
+   color: #ffffff;
+}
+
+.main-nav-container .main-nav-item{
+   display: inline-block;
+   padding-left: 2%;
+   padding-right: 2%;
+}
+
+#search-bar {
+   border: 1px solid gray;
+   border-radius: 20px;
+   width: 300px;
+   height: 40px;
+}
+
+/**------ Search bar ------*/
+
+
+
+
+
+
+
+
