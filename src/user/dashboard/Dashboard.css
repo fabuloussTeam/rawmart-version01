@@ -1,3 +1,7 @@
 .clr-both {
     clear: both !important;
  }
+
+ .card-dashboard-container .card-item {
+     display: inline-block;
+ }

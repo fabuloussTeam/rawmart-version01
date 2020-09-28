@@ -1,0 +1,9 @@
+.detail-button {
+    bottom: 45px;
+    left: 60px;
+}
+
+.card-content, .detail-button {
+    position: relative;
+
+}

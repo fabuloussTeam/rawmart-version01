@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 
 class FormSellerDetails extends Component {
    
+    
+
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -14,7 +16,6 @@ class FormSellerDetails extends Component {
     }
 
     render() { 
-        const { step } = this.state
         const { values, handleChange } = this.props; 
 
         return ( 

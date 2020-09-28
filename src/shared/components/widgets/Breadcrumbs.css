@@ -1,0 +1,13 @@
+.breadcrumb.container{
+    height: 20px;
+    padding-left: 8% ;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+    background-color: #ebebe0;
+}
+
+.breadcrumb.container .link-container{
+  color: gray;
+  padding-left: 2%;
+}
