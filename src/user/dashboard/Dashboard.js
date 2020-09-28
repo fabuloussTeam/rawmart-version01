@@ -13,6 +13,8 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import MessageIcon from '@material-ui/icons/Message';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Row } from 'react-bootstrap';
+import ActiveOrders from '../sellers/components/ActiveOrders';
 
 
 
@@ -22,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
     paper: {
-     /* padding: theme.spacing(2),*/
+      padding: theme.spacing(2),
       textAlign: 'center',
      /* color: theme.palette.text.secondary,*/
     },
@@ -90,7 +92,18 @@ export const Dashboard = () => {
                       </Paper>
                     </MenuItem>
                   </MenuList>
-                     
+                  <div className="Animation-resume">
+                      <Row>Animation Here</Row>
+                  </div>
+                  <Grid  xs={12} sm={9}>
+                   
+                    <ActiveOrders />
+                   
+                  </Grid>
+                  <Grid  xs={12} sm={3}>
+                    <p>simple culomn right</p>
+                  </Grid>
+
                 </Grid>
             </Grid>
           </div>
